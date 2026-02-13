@@ -8,7 +8,7 @@ export default function ExamList({ accessKey }) {
   const fetchExams = async () => {
     setLoading(true);
     try {
-      const res = await fetch('https://your-backend.onrender.com/exams', {
+      const res = await fetch('https://exam-scheduler-backend-la8b.onrender.com/exams', {
         headers: { 'x-access-key': accessKey }
       });
       const data = await res.json();
@@ -63,3 +63,4 @@ export default function ExamList({ accessKey }) {
     </div>
   );
 }
+

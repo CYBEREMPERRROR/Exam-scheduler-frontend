@@ -8,7 +8,7 @@ export default function ExamList({ accessKey }) {
   const fetchExams = async () => {
     setLoading(true);
     try {
-      const res = await fetch('https://exam-scheduler-backend-la8b.onrender.com/exams', {
+      const res = await fetch('${process.env.REACT_APP_BACKEND_URL}/exams', {
         headers: { 'x-access-key': accessKey }
       });
       const data = await res.json();

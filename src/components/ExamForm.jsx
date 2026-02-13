@@ -17,7 +17,7 @@ export default function ExamForm({ accessKey }) {
 
   // Fetch venues from backend
   useEffect(() => {
-    fetch('https://exam-scheduler-backend-la8b.onrender.com/venues', {
+    fetch('${process.env.REACT_APP_BACKEND_URL}/venues', {
       headers: { 'x-access-key': accessKey }
     })
       .then(res => res.json())
@@ -34,7 +34,7 @@ export default function ExamForm({ accessKey }) {
     setMessage(null);
 
     try {
-      const res = await fetch('https://exam-scheduler-backend-la8b.onrender.com/exams', {
+      const res = await fetch('${process.env.REACT_APP_BACKEND_URL}/exams', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

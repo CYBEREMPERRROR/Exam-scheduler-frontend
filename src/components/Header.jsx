@@ -1,10 +1,20 @@
-import logo from '../assets/logo.png';
+import React from 'react';
+import '../css/Header.css';
 
-export default function Header() {
+const Header = ({ role }) => {
   return (
-    <header className="flex items-center bg-blue-600 text-white p-4 shadow-md">
-      <img src={logo} alt="School Logo" className="h-12 mr-4" />
-      <h1 className="text-2xl font-bold">Exam Scheduling System</h1>
+    <header className="header">
+      <div className="header-top">
+        <img src="/logo.png" alt="Uniabuja Logo" className="logo" />
+        <h1 className="title">Uniabuja Exam Scheduler</h1>
+      </div>
+      {role && (
+        <div className="header-role">
+          <span>{role}</span>
+        </div>
+      )}
     </header>
   );
-}
+};
+
+export default Header;

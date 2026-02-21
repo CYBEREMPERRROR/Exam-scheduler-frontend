@@ -1,0 +1,73 @@
+/* Reset and base */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #ffffff; /* White background */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #0b3d2e; /* Deep green */
+  padding: 2rem;
+}
+
+/* Page Title */
+.home-container h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Form Styles */
+.home-container form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Input field */
+.home-container input[type="text"] {
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  border: 2px solid #0b3d2e; /* Deep green border */
+  border-radius: 8px;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+.home-container input[type="text"]:focus {
+  border-color: #186a54; /* Slightly brighter green on focus */
+}
+
+/* Submit button */
+.home-container button {
+  padding: 0.75rem 1rem;
+  background-color: #0b3d2e; /* Deep green */
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.home-container button:hover {
+  background-color: #186a54; /* Brighter green hover */
+  transform: translateY(-2px);
+}
+
+.home-container button:active {
+  transform: translateY(0px);
+}
+
+/* Error message */
+.home-container .error {
+  color: #c53030; /* Red for errors */
+  margin-top: 0.5rem;
+  text-align: center;
+  font-weight: 600;
+}

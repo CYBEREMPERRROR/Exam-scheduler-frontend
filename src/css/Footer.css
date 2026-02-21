@@ -1,0 +1,12 @@
+.footer-container {
+  background-color: #ffffff;
+  border-top: 2px solid #0b3d2e;
+  padding: 1rem 2rem;
+  text-align: center;
+  color: #0b3d2e;
+  font-weight: 500;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}

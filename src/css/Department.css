@@ -1,0 +1,16 @@
+.department-container {
+  padding: 2rem;
+  background-color: #ffffff;
+  color: #0b3d2e;
+  min-height: calc(100vh - 80px);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.department-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.department-container p {
+  font-size: 1.1rem;
+}

@@ -1,0 +1,16 @@
+.faculty-container {
+  padding: 2rem;
+  background-color: #ffffff; /* consistent white background */
+  color: #0b3d2e; /* deep green text */
+  min-height: calc(100vh - 80px); /* leave space for header */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.faculty-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.faculty-container p {
+  font-size: 1.1rem;
+}

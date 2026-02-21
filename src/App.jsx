@@ -1,16 +1,49 @@
-// App.jsx
-import { useState } from 'react';
-import AccessKeyPage from './pages/AccessKeyPage';
-import LecturerPage from './pages/LecturerPage';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import Home from './pages/Home';
+import FacultyDashboard from './pages/FacultyDashboard';
+import DepartmentDashboard from './pages/DepartmentDashboard';
+import { validateAccessKey } from './api/api'; // import helper
+import './css/base.css';
 
-export default function App() {
-  const [accessKey, setAccessKey] = useState(null);
+const App = () => {
+  const [roleState, setRoleState] = useState(null);
 
-  // If no key entered, show AccessKeyPage
-  if (!accessKey) {
-    return <AccessKeyPage onSubmit={setAccessKey} />;
-  }
+  // Auto-check access key from LocalStorage
+  useEffect(() => {
+    const key = localStorage.getItem('accessKey');
+    if (key) {
+      (async () => {
+        try {
+          const res = await validateAccessKey(key);
+          const { role, department } = res.data;
+          setRoleState({ role, department });
 
-  // Once key entered, show main lecturer page
-  return <LecturerPage accessKey={accessKey} />;
-}
+          // Redirect to dashboard
+          if (role === 'faculty') {
+            window.location.href = '/faculty-dashboard';
+          } else {
+            window.location.href = '/department-dashboard';
+          }
+        } catch (err) {
+          console.error('Invalid stored access key', err);
+          localStorage.removeItem('accessKey'); // remove invalid key
+        }
+      })();
+    }
+  }, []);
+
+  return (
+    <Router>
+      <Header roleState={roleState} />
+      <Routes>
+        <Route path="/" element={<Home setRoleState={setRoleState} />} />
+        <Route path="/faculty-dashboard" element={<FacultyDashboard roleState={roleState} />} />
+        <Route path="/department-dashboard" element={<DepartmentDashboard roleState={roleState} />} />
+      </Routes>
+    </Router>
+  );
+};
+
+export default App;

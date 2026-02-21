@@ -1,0 +1,48 @@
+/* Body and global text */
+body {
+  background-color: #ffffff;
+  color: #003300; /* deep green */
+  font-family: 'Roboto', 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Buttons */
+button {
+  background-color: #007f00;
+  color: #ffffff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background-color: #005f00;
+  transform: translateY(-2px);
+}
+/* Card container */
+.card {
+  background-color: #f2f2f2; /* light gray */
+  border-radius: 8px;
+  padding: 1.2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, border 0.2s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border: 2px solid #007f00;
+}
+
+/* Headings inside cards */
+.card h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+  color: #003300;
+}
+
